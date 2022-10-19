@@ -1,17 +1,19 @@
 import * as React from 'react';
 import getCategoriesList from '../components/getCategoriesList';
-import './styles/Home.css';
+import NavBar from '../components/common/NavBar';
+
 
 function Home() {
   const categories = getCategoriesList();
 
   console.log(categories);
   return (
-    <div>
-<h1> teste</h1>       
+    <>
+      <NavBar />
+    <h1> teste</h1>       
       
 
-    </div>
+    </>
   );
 }
 
