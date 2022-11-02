@@ -7,13 +7,13 @@ const GlobalStyles = createGlobalStyle`
    box-sizing: border-box;
    margin: 0;
    padding: 0;
- }
-
- body {
-   color: #ebebeb;
+  }
+  
+  body {
+    /* color: #ebebeb; */
+    background-color: #e7e7e7;
    font-family: 'Poppins', 'sans-serif';
    font-size: 1.15em;
-   /* margin: 0; */
  }
 
  p {
@@ -26,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
 }
 
 a {
-  color: white;
+  color: black;
   text-decoration: none;
   vertical-align: middle;
 }

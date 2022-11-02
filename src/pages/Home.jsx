@@ -1,15 +1,14 @@
 import * as React from 'react';
-import getCategoriesList from '../components/getCategoriesList';
+
 import NavBar from '../components/common/NavBar';
+import BtnCategory from '../components/common/BtnCategory';
 
 
 function Home() {
-  const categories = getCategoriesList();
-
-  console.log(categories);
   return (
     <>
       <NavBar />
+      <BtnCategory />
     <h1> teste</h1>       
       
 
