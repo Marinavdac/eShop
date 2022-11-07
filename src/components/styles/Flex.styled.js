@@ -1,14 +1,11 @@
 import styled from "styled-components";
 
 const Flex = styled.div`
-  align-items: center;
   display: flex;
-  gap: 3rem;
+  gap: 0.1rem;
+  width: 100%;
+  flex-wrap: wrap;
   justify-content: center;
 
-  & > div,
-  & > ul {
-    flex: 1;
-  };
 `
   export default Flex;

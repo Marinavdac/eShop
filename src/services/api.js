@@ -3,8 +3,18 @@ export async function getCategories() {
   const URL = 'https://api.mercadolibre.com/sites/MLB/categories';
   try {
     const response = await axios.get(URL);
+    // console.log('response', data)
     return response;
   } catch (error) {
-    console.error(error.message);
+    console.error('It was not possible to fetch categories');
+  }
+}
+export async function listProductsByCategory(categoryId = '$CATEGORY_ID') {
+  const URL = `https://api.mercadolibre.com/sites/MLB/search?category=${categoryId}`;
+  try {
+    const response = await axios.get(URL);
+    return response;
+  } catch (error) {
+    console.error('It was not possible to fetch categories');
   }
 }

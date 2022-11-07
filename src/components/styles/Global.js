@@ -13,12 +13,13 @@ const GlobalStyles = createGlobalStyle`
     /* color: #ebebeb; */
     background-color: #e7e7e7;
    font-family: 'Poppins', 'sans-serif';
-   font-size: 1.15em;
+   font-size: 1em;
  }
 
  p {
   opacity: 0.6;
-  line-height: 1.5;
+  text-align: left;
+  width: 3rem;
  }
 
  img {
