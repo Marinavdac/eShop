@@ -4,13 +4,14 @@ import { FaEnvelope, FaMapPin, FaWhatsapp } from 'react-icons/fa';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import logo from '../../imgs/images1.png';
 
-function NavBar() {
+function NavBar(props) {
   return (
     <StyledNavBar>
       <div>
         <img src={logo} />
-        <StyledInput type="text" placeholder="Search" />
-        <BiSearchAlt2 style={{ color: 'black' }} />
+        <StyledInput type="text" placeholder="Search" value={props.search} onChange={props.handleSearch} />
+        <button
+         onClick={ () => props.handleSearchBtn(props.search)}><BiSearchAlt2 style={{ color: 'black' }} /></button>
       </div>
       <Flex>
         <li>

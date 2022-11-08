@@ -15,7 +15,14 @@ const Flex = styled.div`
     background-color: white;
     padding: 0.5rem;
     border-radius: 0.3rem;
-    width: 10rem;
+    width: 12rem;
+    border: transparent;
+    box-shadow: 1px 1px 2px grey;
+    cursor: pointer;
+
+    &:hover {
+    font-weight: 600;
+    }
   }
 
   p {

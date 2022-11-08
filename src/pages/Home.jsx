@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 import NavBar from '../components/common/NavBar';
 import Categories from '../components/common/Categories.';
-import { listProductsByCategory } from '../services/api';
+import { listProductsByCategory, searchProductsByName } from '../services/api'
 import Flex from '../components/styles/Flex.styled';
-// import { listProductsByCategory } from '../services/api';
-// import getProductsBtn from '../components/common/getCategoriesBtn';
+
 
 function Home() {
   const [products, setProducts] = useState([]);
-
+  const [search, setSearch] = useState('');
+  
   const handleClick = async (event) => {
     const {
       data: { results },
@@ -17,10 +17,27 @@ function Home() {
     setProducts(results);
   };
 
-  console.log(products);
+  const handleSearch = (event) => {
+    console.log(event.target.value)
+    setSearch(event.target.value)
+  }
+  
+  const handleSearchBtn = async (search) => {
+    const {
+      data: { results },
+    } = await searchProductsByName(search);
+    
+   setProducts(results);
+  }
+
+  console.log('products', products);
   return (
     <>
-      <NavBar />
+      <NavBar
+        handleSearch={handleSearch}
+        handleSearchBtn={handleSearchBtn}
+        search={search}
+      />
       <Flex>
         <Categories handleClick={handleClick} />
         <Flex wrap={'wrap'}>
@@ -34,6 +51,7 @@ function Home() {
             >
               <p>{product.title}</p>
               <img src={product.thumbnail} />
+              <p>{`R$ ${(product.price).toFixed(2)}`}</p>
             </Flex>
           ))}
         </Flex>

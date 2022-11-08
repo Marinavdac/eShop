@@ -18,3 +18,15 @@ export async function listProductsByCategory(categoryId = '$CATEGORY_ID') {
     console.error('It was not possible to fetch categories');
   }
 }
+export async function searchProductsByName(product) {
+  console.log('product', product)
+  const URL = `https://api.mercadolibre.com/sites/MLB/search?q=${product}`;
+  try {
+    const response = await axios.get(URL);
+    return response;
+  } catch (error) {
+    console.error('It was not possible to fetch product');
+  }
+}
+
+
