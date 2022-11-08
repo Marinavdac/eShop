@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import NavBar from '../components/common/NavBar';
 import Categories from '../components/common/Categories.';
 import { listProductsByCategory } from '../services/api';
-import FlexContainer from '../components/styles/FlexContainer.styled';
+import Flex from '../components/styles/Flex.styled';
 // import { listProductsByCategory } from '../services/api';
 // import getProductsBtn from '../components/common/getCategoriesBtn';
 
@@ -21,15 +21,23 @@ function Home() {
   return (
     <>
       <NavBar />
-      <Categories handleClick={handleClick} />
-      <FlexContainer>
-        {products?.map((product, index) => (
-          <div key={index}>
-            <h4>{product.title}</h4>
-            <img src={product.thumbnail} />
-          </div>
-        ))}
-      </FlexContainer>
+      <Flex>
+        <Categories handleClick={handleClick} />
+        <Flex wrap={'wrap'}>
+          {products?.map((product, index) => (
+            <Flex
+              direction={'column'}
+              width={'12rem'}
+              background={'white'}
+              padding={'1.5rem'}
+              key={index}
+            >
+              <p>{product.title}</p>
+              <img src={product.thumbnail} />
+            </Flex>
+          ))}
+        </Flex>
+      </Flex>
     </>
   );
 }

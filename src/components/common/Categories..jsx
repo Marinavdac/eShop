@@ -19,7 +19,7 @@ function Categories(props) {
   }, []);
 
   return (
-    <Flex>
+    <Flex direction={'column'}>
       {
         categories.map((category, index) => (
           <button
